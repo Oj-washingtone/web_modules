@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+
+	<link rel="stylesheet" type="text/css" href="login-style.css">
+	<link rel="stylesheet" type="text/css" href="small.css">
+
+	<!-- Box icons -->
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+	<div id="container">
+		<h4><span style="color: purple; font-weight: bold; font-size: 20px;">#</span> Day One</h4>
+
+		<div id="card">
+			<div id="nav-tabs">
+				<button type="button" class="tabs" id="login" onclick="togglePages(event, 'login')">Login</button>
+				<button type="button" class="tabs inactive" id="signup" onclick="togglePages(event, 'signup')">Sign up</button>
+			</div>
+			
+			<div id="login-form">
+				<form name="login" method="post">
+					<h3>Welcome back</h3>
+					<button style="background: #fff; border: 1px solid #e1e4eb; border-radius: 20px; padding: 5px; justify-content: center; width: 100%; margin-bottom: 15px; cursor: pointer;"><img src="google1.png" style="width: 15px;"> Sign in with google</button>
+					
+					<div>
+						<input type="text" name="username" placeholder="Username" class="form-inputs">	
+					</div>
+					<div>
+						<input type="password" name="password" placeholder="Password" class="form-inputs" id="pwd">
+					</div>
+					<div id="check-box">
+						<input type="checkbox" name="rem" id="check"><label for="check" >Show pasword</label><br><br>
+
+						<a href="" class="link">Forgot password?</a>
+					</div>
+					<div>
+						<input type="submit" name="Login" value="Login" class="btn">
+					</div>
+					
+					
+					
+				</form>
+			</div>
+
+			<div id="sign-up-form">
+				<form name= "signup">
+					
+					<div id="login-form">
+				<form name="login">
+					<h3>Create account</h3>
+					<button style="background: #fff; border: 1px solid #e1e4eb; border-radius: 20px; padding: 5px; justify-content: center; width: 100%; margin-bottom: 15px; cursor: pointer;"><img src="google1.png" style="width: 15px;"> Sign in with google</button>
+					
+					<div class="double-inputs">
+						<input type="text" name="fname" placeholder="First name" class="input2">	
+						<input type="text" name="lname" placeholder="Last name" class="input2" style="margin-left: 5px;">	
+					</div>
+
+					<div>
+						<input type="email" name="email" placeholder="Email" class="form-inputs">
+					</div>
+					<div class="double-inputs">
+						<input type="password" name="fname" placeholder="Password" class="input2">	
+						<input type="password" name="lname" placeholder="Confirm password" class="input2" style="margin-left: 5px;">	
+					</div>
+					<div id="check-box">
+						<input type="checkbox" name="rem" id="check"><label for="check" >I accept <a href="" class="link">terms and conditions</a> of service</label><br><br>
+
+						
+					</div>
+					<div>
+						<input type="submit" name="Login" value="Sign up" class="btn">
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		let signupForm = document.getElementById("sign-up-form");
+		let loginForm = document.getElementById("login-form");
+
+
+		function togglePages(e, id){
+			if(id === "signup"){
+				signupForm.style.display = "block";
+				loginForm.style.display = "none"
+
+				document.getElementById("login").classList.add('inactive');
+				document.getElementById(id).classList.remove('inactive');
+			}
+
+			if(id === "login"){
+				signupForm.style.display = "none";
+				loginForm.style.display = "block";
+
+				document.getElementById('signup').classList.add('inactive');
+				document.getElementById(id).classList.remove('inactive');
+			}
+		}
+
+
+		// See password
+		let check_box = document.getElementById('check')
+		
+		check_box.onclick = function(){
+			if(check_box.checked === true){
+				document.getElementById('pwd').type = "text";
+			}else{
+				document.getElementById('pwd').type = "password";
+			}
+		}
+		
+
+	</script>
+
+</body>
+</html>

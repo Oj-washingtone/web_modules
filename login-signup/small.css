@@ -1,0 +1,11 @@
+@media only screen and (max-width: 530px) {
+	#container{
+		left: 0;
+		right: 0;
+	}
+
+	#card{
+		width: 80% !important;
+		margin: 100px auto !important;
+	}
+}
